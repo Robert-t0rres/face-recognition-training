@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+#app {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    overflow: auto; /* Enable scrolling within the app */
+    padding: 20px; /* Add padding for some space around the content */
+}
+
+h1 {
+    font-size: 1.5em; /* Reduce the font size of the banner */
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+select {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 5px;
+}
+
+#flashcard {
+    margin: 20px 0;
+}
+
+#face-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* More rounded corners for the image */
+}
+
+#group-faces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; /* Adjust as necessary */
+    margin-top: 20px;
+}
+
+#group-faces img {
+    max-width: 150px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 20px; /* More rounded corners for the images */
+}
+
+button {
+    background-color: #3b3b3b;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 20px; /* More rounded corners for the buttons */
+}
+
+button:hover {
+    background-color: #5c5c5c;
+}
+
+.hidden {
+    display: none;
+}
+
+.full-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.full-screen #flashcard,
+.full-screen #name,
+.full-screen #next-button,
+.full-screen #show-group-button {
+    display: none;
+}

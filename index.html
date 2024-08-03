@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Face Recognition Training</h1>
+        <label>
+            <input type="checkbox" id="toggle-multiple-mode" checked> Use only faces with multiple photos for memorization
+        </label>
+        <label>
+            Group size:
+            <select id="group-size-select">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+        </label>
+        <div id="flashcard">
+            <img id="face-image" src="" alt="Face Image">
+            <p id="name"></p>
+        </div>
+        <button id="next-button">Next</button>
+        <button id="show-group-button">Show Group</button>
+        <div id="group" class="hidden">
+            <h2>Select the correct face:</h2>
+            <div id="group-faces"></div>
+            <button id="next-round-button" class="hidden">Next Round</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
