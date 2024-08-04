@@ -52963,6 +52963,7 @@ let singleImageFaces = [
 
 
 
+
 let faces = multipleImagesFaces;
 let memorizedFace = null;
 let groupSize = 5; // Default number of faces in the group
@@ -53049,19 +53050,40 @@ function showGroup() {
         const img = document.createElement('img');
         img.src = face.src;
         img.dataset.index = index;
+        img.classList.add('group-face');
         img.addEventListener('click', () => {
             if (face.name === memorizedFace.name) {
-                alert('Correct!');
+                showPopup('Correct!', 'Next Round', true);
             } else {
-                alert('Try again.');
+                showPopup('Incorrect', 'Try Again', false);
             }
-            document.getElementById('next-round-button').classList.remove('hidden');
         });
         groupFacesDiv.appendChild(img);
     });
 
     // Scroll to top of the group faces
     groupFacesDiv.scrollTop = 0;
+}
+
+function showPopup(message, buttonText, isCorrect) {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = `
+        <div class="popup-content">
+            <p>${message}</p>
+            <button id="popup-button">${buttonText}</button>
+        </div>
+    `;
+    document.body.appendChild(popup);
+
+    document.getElementById('popup-button').addEventListener('click', () => {
+        if (isCorrect) {
+            document.body.removeChild(popup);
+            document.getElementById('next-round-button').click();
+        } else {
+            document.body.removeChild(popup);
+        }
+    });
 }
 
 // Initialize the first face and set defaults on page load
